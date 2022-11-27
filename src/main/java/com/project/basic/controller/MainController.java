@@ -10,6 +10,6 @@ public class MainController {
     
     @GetMapping
     public String getMain() {
-        return "/WEB-INF/views/main.jsp";
+        return "main";
     }
 }

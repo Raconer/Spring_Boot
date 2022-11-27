@@ -13,8 +13,11 @@ repositories {
 }
 
 dependencies {
+	// Spring Boot Web Server Dependency
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// Find Views Path
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
