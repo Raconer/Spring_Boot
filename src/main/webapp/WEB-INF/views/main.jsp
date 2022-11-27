@@ -7,6 +7,8 @@
     <title>Spring Boot Basic Project</title>
 </head>
 <body>
-    Welcome Spring Boot Basic Project
+    Welcome Spring Boot Basic Project<br>
+    id : ${base.id}<br>
+    title : ${base.title}
 </body>
 </html>
