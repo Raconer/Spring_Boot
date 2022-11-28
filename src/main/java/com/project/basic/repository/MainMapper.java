@@ -17,4 +17,8 @@ public interface MainMapper {
     int totalCnt(BaseSrch option);
     Base get(int id);
     List<Base> getList(BaseSrch option);
+    // Update
+    int update(Base base);
+    // Delete
+    int delete(Integer id);
 }

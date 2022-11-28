@@ -6,7 +6,8 @@ import lombok.Data;
 
 @Data
 public class Base {
-    private int id;
+    private Integer id;
     @NotEmpty
     private String title;
+    private String content;
 }

@@ -24,15 +24,36 @@
 
     <select id="get" resultType="Base">
         SELECT  `id`, 
-                `title`
+                `title`,
+                `content`
         FROM    `base_table`
         WHERE   `id` = #{id}
     </select>
     <select id="getList" parameterType="BaseSrch" resultType="Base">
         SELECT  `id`, 
-                `title`
+                `title`,
+                `content`
         FROM    `base_table` 
         <include refid="where_list"/>
         LIMIT #{startRow}, #{pageSize}
     </select>
+    <!-- Update -->
+    <update id="update" parameterType="Base">
+        UPDATE `base_table`
+        <set>
+            <if test="title != null and title != ''">
+                `title` = #{title},
+            </if>
+            <if test="content != null and content != ''">
+                `content` =  #{content},
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <!-- DELETE -->
+    <delete id="delete">
+        DELETE FROM `base_table`
+        WHERE id = #{id};
+    </delete>
 </mapper>

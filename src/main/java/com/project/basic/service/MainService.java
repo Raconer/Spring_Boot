@@ -35,4 +35,14 @@ public class MainService {
         return new SearchList<>(options, baseList);
     }
 
+    // Update
+    public int update(Base base){
+        return mainMapper.update(base);
+    } 
+
+    // DELETE
+    public int delete(Integer id){
+        return mainMapper.delete(id);
+    }
+
 }
