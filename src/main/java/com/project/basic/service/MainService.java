@@ -2,7 +2,7 @@ package com.project.basic.service;
 
 import org.springframework.stereotype.Service;
 
-import com.project.basic.model.Base;
+import com.project.basic.model.base.Base;
 import com.project.basic.repository.MainMapper;
 
 import lombok.AllArgsConstructor;

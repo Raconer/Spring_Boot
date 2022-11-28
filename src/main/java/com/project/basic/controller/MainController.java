@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.project.basic.model.Base;
+import com.project.basic.model.base.Base;
 import com.project.basic.service.MainService;
 import com.project.basic.utils.MessageUtil;
 
