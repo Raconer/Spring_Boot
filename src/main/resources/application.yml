@@ -1,0 +1,22 @@
+server:
+    port: 8080
+spring:
+    web:
+        locale: fr_FR
+        locale-resolver: accept-header
+    devtools:
+        livereload:
+            enabled: true
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+    messages:
+        basename: messages/messages
+        encoding: UTF-8
+mybatis:
+    mapper-locations: classpath:/META-INF/mybatis/*/*.xml
+    type-aliases-package: com.project.basic.model
+logging:
+    config: classpath:logback.xml
+
