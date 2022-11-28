@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.basic.repository.MainMapper">
-    <select id="getMain" resultType="Base">
-        SELECT   `id`, 
+    <!-- CREATE -->
+    <insert id="insert" parameterType="Base">
+        INSERT INTO `base_table`(title)
+        VALUES(#{title})
+    </insert>
+
+    <!-- READ -->
+    <sql id="where_list">
+        <where>
+            <if test="title != null and title != ''">
+                AND `title` LIKE CONCAT('%', #{title}, '%')
+            </if>
+        </where>
+    </sql>
+
+    <select id="totalCnt" parameterType="BaseSrch" resultType="Integer">
+        SELECT  COUNT(*)
+        FROM    `base_table`
+        <include refid="where_list"/>
+    </select>
+
+    <select id="get" resultType="Base">
+        SELECT  `id`, 
                 `title`
         FROM    `base_table`
+        WHERE   `id` = #{id}
+    </select>
+    <select id="getList" parameterType="BaseSrch" resultType="Base">
+        SELECT  `id`, 
+                `title`
+        FROM    `base_table` 
+        <include refid="where_list"/>
+        LIMIT #{startRow}, #{pageSize}
     </select>
 </mapper>

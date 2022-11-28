@@ -15,3 +15,20 @@
 * DB
   * MySql
   * Mybatis
+
+## DB Test Sql
+
+```sql
+  CREATE DATABASE `basic`;
+
+  -- basic.base_table definition
+
+  CREATE TABLE `base_table` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `title` varchar(100) DEFAULT NULL,
+    UNIQUE KEY `base_table_id_IDX` (`id`) USING BTREE
+  ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+  INSERT INTO base_table(id, title)
+  VALUES(1, 'TEST_Title');
+```

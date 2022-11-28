@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +11,26 @@
 </head>
 <body>
     Welcome Spring Boot Basic Project<br>
-    id : ${base.id}<br>
-    title : ${base.title}<br>
     다국어 : ${message} <br>
     다국어 TagLib : <spring:message code="alert.saved" />
+    
+    <table>
+        <tr>    
+            <th>ID</th>
+            <th>TITLE</th>
+        </tr>
+        <c:forEach var="base" items="${baseList.list}">
+            <tr>
+              <td><c:out value="${base.id}"/></td>
+              <td><c:out value="${base.title}"/></td>
+            </tr>
+        </c:forEach>    
+    </table>
+    <c:forEach  var="x" begin="1" end="${total + 1}" step="1">
+        <a href="?page=${x}" >
+            ${x}
+        </a>
+    </c:forEach>  
+
 </body>
 </html>
