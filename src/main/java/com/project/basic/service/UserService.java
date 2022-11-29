@@ -2,25 +2,31 @@ package com.project.basic.service;
 
 import org.springframework.stereotype.Service;
 
-import com.project.basic.model.user.User;
+import com.project.basic.model.user.UserInfo;
 import com.project.basic.repository.UserMapper;
+import com.project.basic.utils.PasswordUtil;
 
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class UserService {
+public class UserService  {
 
     UserMapper userMapper;
+  
     
     // Create
-    public int insert(User user){
-        return userMapper.insert(user);
+    public int insert(UserInfo userInfo){
+        String password = userInfo.getPassword();
+        userInfo.setPassword(PasswordUtil.encoding(password));
+        return userMapper.insert(userInfo);
     }
     // Read
-    public User get(User user){
-        return userMapper.get(user);
+    public UserInfo get(UserInfo userInfo){
+        return userMapper.get(userInfo);
     }
+
+    
     // Update
     // Delete
 }

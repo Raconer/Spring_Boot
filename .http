@@ -1,3 +1,8 @@
+@host = localhost
+@token=
+
+###
+
 # Main -------------------------------
 # CREATE
 # Insert Success
@@ -41,14 +46,30 @@ Content-Type: application/json
 
 DELETE  http://localhost:8080/api/3
 
-###
 # USER -------------------------------
 
-POST http://localhost:8080/api/user HTTP/1.1
+###
+
+# @name login
+POST http://localhost:8080/api/sign HTTP/1.1
 Content-Type: application/json
 
 {
-    "email":"test@test.com",
+    "email":"test12@test.com",
+    "password":"testWord"
+}
+
+###
+
+@authToken = {{login.response.body.data.token}}
+
+POST http://localhost:8080/api/sign/up HTTP/1.1
+Content-Type: application/json
+Authorization: bearer {{authToken}}123
+
+{
+    "email":"test123@test.com",
     "password":"testWord",
     "username":"testUserName"
 }
+

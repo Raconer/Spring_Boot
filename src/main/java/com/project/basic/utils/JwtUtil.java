@@ -60,7 +60,7 @@ public class JwtUtil {
                 .setClaims(payloads)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + accessExpire))
-                .signWith(SignatureAlgorithm.HS256, key.getBytes())
+                .signWith(SignatureAlgorithm.HS256, key)
                 .compact();
     }
 
@@ -80,7 +80,7 @@ public class JwtUtil {
                 .builder()
                 .setHeader(headers)
                 .setExpiration(expiration)
-                .signWith(SignatureAlgorithm.HS256,  key.getBytes())
+                .signWith(SignatureAlgorithm.HS256,  key)
                 .compact();
     }
 
@@ -92,7 +92,7 @@ public class JwtUtil {
         Map<String, Object> claimMap = null;
         try {
             claimMap = Jwts.parser()
-                            .setSigningKey(key.getBytes("UTF-8"))
+                            .setSigningKey(key)
                             .parseClaimsJws(token)
                             .getBody();
         } catch (SignatureException ex) {
@@ -105,8 +105,6 @@ public class JwtUtil {
             log.error("Unsupported JWT token");
         } catch (IllegalArgumentException ex) {
             log.error("JWT claims string is empty.");
-        } catch (UnsupportedEncodingException e) {
-            log.error("UnsupportedEncodingException");
         }
         return claimMap;
     }

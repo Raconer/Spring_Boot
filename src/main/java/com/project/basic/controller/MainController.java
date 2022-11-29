@@ -14,8 +14,6 @@ import com.project.basic.service.MainService;
 import com.project.basic.utils.MessageUtil;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Controller

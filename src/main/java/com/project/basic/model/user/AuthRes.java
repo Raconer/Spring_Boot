@@ -1,13 +1,13 @@
 package com.project.basic.model.user;
 
-import javax.validation.constraints.NotEmpty;
-
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-public class User {
-    @NotEmpty
+@Builder
+public class AuthRes {
     private String email;
-    private String password;
     private String username;
+    private String token;
+    private String refreshToken;   
 }

@@ -8,7 +8,7 @@ import org.springframework.validation.Validator;
 
 import com.mysql.cj.util.StringUtils;
 import com.project.basic.model.common.code.ValidateCode;
-import com.project.basic.model.user.User;
+import com.project.basic.model.user.UserInfo;
 import com.project.basic.repository.UserMapper;
 
 @Component
@@ -16,7 +16,7 @@ public class InsertVdt implements Validator{
 
     UserMapper userMapper;
 
-    User user;
+    UserInfo user;
 
     public InsertVdt(UserMapper userMapper){
         this.userMapper = userMapper;
@@ -24,14 +24,14 @@ public class InsertVdt implements Validator{
     
     @Override
     public boolean supports(Class<?> clazz) {
-        return User.class.isAssignableFrom(clazz);
+        return UserInfo.class.isAssignableFrom(clazz);
     }
 
     @Override
     public void validate(Object target, Errors errors) {
-        user = (User) target;
+        user = (UserInfo) target;
 
-        User registered = userMapper.get(user);
+        UserInfo registered = userMapper.get(user);
        
         if(registered != null){
             errors.rejectValue("email", "Already Registered User!");
