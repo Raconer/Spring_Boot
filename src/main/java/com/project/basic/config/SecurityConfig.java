@@ -34,7 +34,7 @@ public class SecurityConfig{
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
         .csrf().disable()
-            .authorizeRequests()    
+            .authorizeRequests()
             .antMatchers("/api/sign").permitAll()
             .antMatchers("/api/**").authenticated()
             .anyRequest().permitAll()
@@ -50,9 +50,9 @@ public class SecurityConfig{
         return http.build();
     }
 
-     @Bean
+    @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
+        return web -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
     }
    
 }

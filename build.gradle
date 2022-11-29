@@ -37,6 +37,9 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	// jaxb // JDK  java EE API 미포함
 	implementation 'javax.xml.bind:jaxb-api:2.3.1'
+	// String Utils // startsWith사용시 null과 value값 동시 체크
+	implementation 'org.apache.commons:commons-lang3:3.4'
+
 	
 	// Properties
 	compileOnly 'org.projectlombok:lombok'
