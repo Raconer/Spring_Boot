@@ -9,3 +9,15 @@ spring:
             connectionTimeout: 5000
             validationTimeout: 1000
             maximumPoolSize: 10
+# Token Info
+jwt:
+    # 무작위 생성된 UUID
+    secret:
+        Key: 9207dec0-6f8b-11ed-acb2-8f9e0a2f64f1
+    # 1 Hour
+    access:
+        expire: 10800000
+    # 1 Day
+    refresh:
+        expire: 86400000
+

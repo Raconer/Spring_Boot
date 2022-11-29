@@ -29,9 +29,8 @@ dependencies {
 	implementation 'taglibs:standard:1.1.2'
 	// JSTL Dependency
 	implementation 'javax.servlet:jstl:1.2'
-
-
-
+	// JWT
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	// Properties
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
