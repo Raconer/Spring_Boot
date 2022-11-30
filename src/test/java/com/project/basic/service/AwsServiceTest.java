@@ -11,8 +11,6 @@ import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.web.multipart.MultipartFile;
 
-import lombok.AllArgsConstructor;
-
 @SpringBootTest()
 @TestPropertySource(properties = {"spring.config.location = classpath:application-local.yml"})
 public class AwsServiceTest {
@@ -23,7 +21,6 @@ public class AwsServiceTest {
     @Test
     public void uploadTest() {
         File file = new File("src/test/resources/image/cat.jpg");
-
 
         try {
             String fileName = file.getName();

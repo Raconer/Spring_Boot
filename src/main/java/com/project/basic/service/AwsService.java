@@ -57,8 +57,6 @@ public class AwsService {
             log.info("============= Upload file - Done!! ===============");
         } catch (AmazonClientException e){
             throw new AmazonClientException(e);
-        } catch (RuntimeException e){
-            throw new RuntimeException();
         } catch (IOException e) {
             throw new NullPointerException();
         }
@@ -73,8 +71,6 @@ public class AwsService {
             log.info("============= Remove file - Done!! ===============");
         } catch (AmazonClientException e) {
             throw new AmazonClientException(e);
-        } catch (RuntimeException e){
-            throw new RuntimeException();
         }
         return isRemove;
     }

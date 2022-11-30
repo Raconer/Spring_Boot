@@ -24,9 +24,7 @@ import com.project.basic.service.SignService;
 import com.project.basic.utils.JwtUtil;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Component
 @AllArgsConstructor
 public class JwtRequestFilter extends OncePerRequestFilter{

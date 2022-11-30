@@ -20,7 +20,7 @@ public class MessageUtil {
   
     @PostConstruct
     public void initialize() {
-        this.messageSource = source;
+        MessageUtil.messageSource = source;
     }
 
     public static String getMessage(String code) {

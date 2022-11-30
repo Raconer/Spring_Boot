@@ -16,7 +16,7 @@ public class PasswordUtil {
     
     @PostConstruct
     public void initialize() {
-        this.passwordEncoder = encoder;
+        PasswordUtil.passwordEncoder = encoder;
     }
 
     public static String encoding(String password){

@@ -1,6 +1,5 @@
 package com.project.basic.utils;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +21,7 @@ public class JwtUtil {
     // 토큰을 만들기 위한 key
     // 필요시 RefreshToken 또한 따로 추가 한다.
     
-    public static String key;
+    private static String key;
     private static long accessExpire;
     private static long refreshExpire;
 
