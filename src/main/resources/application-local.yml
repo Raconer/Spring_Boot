@@ -20,4 +20,13 @@ jwt:
     # 1 Day
     refresh:
         expire: 86400000
+# AWS 
+# AWS 사용을 위해 필수 입력
+aws:
+    bucket:
+        name: bucket
+        access:
+            key: access_key
+        secret:
+            key: secret_key
 

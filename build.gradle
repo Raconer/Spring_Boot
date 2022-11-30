@@ -39,6 +39,8 @@ dependencies {
 	implementation 'javax.xml.bind:jaxb-api:2.3.1'
 	// String Utils // startsWith사용시 null과 value값 동시 체크
 	implementation 'org.apache.commons:commons-lang3:3.4'
+	// AWS Gradle
+	implementation 'com.amazonaws:aws-java-sdk-s3:1.12.350'
 
 	
 	// Properties
